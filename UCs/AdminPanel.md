@@ -12,26 +12,24 @@ An admin manages news drafts from automation or manual creation. They can browse
 
 ## 2.1 Basic Flow
 
-1. **Admin:** Log in.
-2. **System:** Check credentials. If valid show Admin Dashboard.
-3. **Admin:** Choose “News drafts.”
-4. **System:** Load draft list and history. Decision: *Drafts loaded?*
+1. **Admin:** Choose “News drafts.”
+2. **System:** Load draft list and history. Decision: *Drafts loaded?*
 
    * **Yes:** continue to 5.
    * **No:** go to Alt Flow “Empty State.”
-5. **Admin:** Open a draft.
-6. **System:** Show selected draft.
-7. **Admin:** Review and edit.
-8. **Decision: Approve?**
+3. **Admin:** Open a draft.
+4. **System:** Show selected draft.
+5. **Admin:** Review and edit.
+6. **Decision: Approve?**
 
    * **No:** go to Alt Flow “Approve = No.”
    * **Yes:** continue.
-9. **Decision: Publish?**
+7. **Decision: Publish?**
 
    * **No:** go to Alt Flow “Approve = No.”
    * **Yes:** **Admin:** Click “Publish article.”
-10. **System:** Publish to website → **OpenSearch:** Index content → **System:** Write audit log → **Email/ESP optional:** Notify.
-11. **System:** Return to Dashboard.
+8. **System:** Publish to website → **OpenSearch:** Index content → **System:** Write audit log → **Email/ESP optional:** Notify.
+9. **System:** Return to Dashboard.
 
 ### 2.1.1 Alternative Flows
 
@@ -79,7 +77,8 @@ Swimlanes: **Admin**, **System**, **OpenSearch**, **Email/ESP**.
 
 ### 2.1.4 Activity Diagram
 
-<img width="3454" height="3956" alt="UseCaseAdminLoggedIn" src="https://github.com/user-attachments/assets/686979f2-cc11-408a-8278-453eae655ad7" />
+<img width="3454" height="3956" alt="BPMN process flow - Page 1 (5)" src="https://github.com/user-attachments/assets/dac1b237-49fc-4d6c-8d62-58bb029e032a" />
+
 
 ### 2.1.5 Mock-up
 
