@@ -144,7 +144,7 @@ Feature: Admin Panel - Review, Edit, and Publish News Drafts
     Then the system shows an error message
     And the draft remains unchanged
 ```
-This Narrative is implemented in a [seperate document](https://github.com/bermar24/GrowNow/blob/main/src/test/resources/features/AdminPanel.feature).
+This Narrative is implemented in a [seperate document](https://github.com/bermar24/growKnow/blob/main/features/AdminPanel.feature).
 
 ## 2.2 Alternative Flows
 ### Invalid Login
