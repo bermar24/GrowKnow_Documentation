@@ -4,6 +4,17 @@
 This repo contain the Documentation for our project. 
 If you want to explore how we implement it pleas e visit our [GrowKnow Repository](https://github.com/bermar24/growKnow.git).
 
+## References
+
+| References                                                                                                                                                          |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [GrowKnow Documentation – Software Requirements Specification](https://github.com/bermar24/GrowKnow_Documentation/blob/main/Software_Requirements_Specification.md) |
+| [GrowKnow Documentation – Software Architecture Document](https://github.com/bermar24/GrowKnow_Documentation/blob/main/Software_Architecture_Document.md)           |
+| [GrowKnow Blog](https://knowgrow7.wordpress.com/)                                                                                                                   |
+| [GrowKnow - GitHub Repository](https://github.com/bermar24/GrowKnow)                                                                                                |
+
+
+
 ## 🌍 Vision & Mission  
 We are building a **central hub** that consolidates the latest developments in AI, organizes tools by real utility, and provides **structured learning paths for IT professionals**.  
 

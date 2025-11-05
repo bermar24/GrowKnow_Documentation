@@ -67,11 +67,13 @@ Admins manage content review, user roles, and automation pipelines for ingestion
 
 ### 1.4 References
 
-| Title                                                                 |    Date    | Publishing organization |
-| --------------------------------------------------------------------- | :--------: | ----------------------- |
-| [GrowKnow Blog – Project Vision](#)                                   | 2025-09-25 | GrowKnow Team           |
-| [GrowKnow Blog – Team & Technology](#)                                | 2025-09-26 | GrowKnow Team           |
-| [GitHub Repository](https://github.com/bermar24/GrowKnow)             | 2025-10-01 | GrowKnow Team           |
+| References                                                                                                                                                          |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [GrowKnow Documentation – Software Requirements Specification](https://github.com/bermar24/GrowKnow_Documentation/blob/main/Software_Requirements_Specification.md) |
+| [GrowKnow Documentation – Software Architecture Document](https://github.com/bermar24/GrowKnow_Documentation/blob/main/Software_Architecture_Document.md)           |
+| [GrowKnow Blog](https://knowgrow7.wordpress.com/)                                                                                                                   |
+| [GrowKnow - GitHub Repository](https://github.com/bermar24/GrowKnow)                                                                                                |
+
 
 
 ### 1.5 Overview
@@ -157,21 +159,27 @@ For later releases we plan to implement:
 #### 3.1.1 Browse AI News
 Users can read and navigate through the latest AI news, which are automatically collected, summarized, and tagged.
 
+This Use Case is specified in a [seperate document](UCs/3.1.1_Browse_AI_News.md).
+
 #### 3.1.2 Admin Panel
 Admins access a dashboard for managing users, roles, and platform-wide settings.
 
-This Use Case is specified in a [seperate document](UCs/AdminPanel.md).
+This Use Case is specified in a [seperate document](UCs/3.1.2_AdminPanel.md).
 
 #### 3.1.3 Manage Database & Pipelines
 Admins ensure the consistency and quality of stored news, tools, and roadmaps while managing automation pipelines.
 
+This Use Case is specified in a [seperate document](UCs/3.1.3_Manage_Database_&_Pipelines.md).
+
 #### 3.1.4 Search & Filter Tools
 Users can search and filter through the AI tool directory using categories, domains, and budget.
+
+This Use Case is specified in a [seperate document](UCs/3.1.4_Search_&_Filter_Tools.md).
 
 #### 3.1.5 Trigger Newsletter Run
 The automation orchestrator (n8n) can initiate newsletter generation and delivery.
 
-This Use Case is specified in a [seperate document](UCs/TriggerNewsletterRun.md).
+This Use Case is specified in a [seperate document](UCs/3.1.5_TriggerNewsletterRun.md).
 
 #### 3.1.6 Subscribe to Newsletter
 Users can subscribe to receive the weekly newsletter.
@@ -211,10 +219,10 @@ By using standard UI/UX patterns, GrowKnow feels familiar to users accustomed to
 ### 3.3 Reliability
 
 #### 3.3.1 Availability
-The server shall be available 95% of the time. This also means we have to figure out the "rush hours" of our app because the downtime of the server is only tolerable when as few as possible players want to use the app.
+The server shall be available 99% of the time. This also means we have to figure out the "rush hours" of our app because the downtime of the server is only tolerable when as few as possible players want to use the app.
 
 #### 3.3.2 Defect Rate
-Our goal is that we have no loss of any data. This is important so that the game sessions can carry on, even after a downtime of the server.
+Our goal is that we have no loss of any data.
 
 ### 3.4 Perfomance
 
@@ -230,7 +238,7 @@ Pages and search queries should load within 1–2 seconds under normal load.
 ### 3.5 Supportability
 
 #### 3.5.1 Coding Standards
-We will follow industry best practices and clean code principles for both backend (Node.js, Express) and frontend (React).
+We will follow industry best practices and clean code principles for both backend (Django) and frontend (React).
 
 #### 3.5.2 Testing Strategy
 The system will use automated testing for core functionalities (user registration, newsletter, search). Unit, integration, and pipeline tests will ensure reliability.
@@ -238,11 +246,11 @@ The system will use automated testing for core functionalities (user registratio
 ### 3.6 Design Constraints
 * Modular architecture (frontend, backend, automation orchestrator).
 * RESTful APIs for data exchange.
-* Tech stack: React, Node.js, PostgreSQL, n8n for automation.
+* Tech stack: React, Django, Supabase, n8n for automation.
 * Hosted on scalable cloud infrastructure (e.g., Vercel, AWS).
 
 ### 3.7 On-line User Documentation and Help System Requirements
-GrowKnow will provide a “Help” section with FAQs, tutorials, and contact forms. Most features are designed to be self-explanatory.
+GrowKnow will provide a contact forms. Most features are designed to be self-explanatory.
 
 ### 3.8 Purchased Components
 We don't have any purchased components yet. If there will be purchased components in the future we will list them here.
@@ -250,7 +258,7 @@ We don't have any purchased components yet. If there will be purchased component
 ### 3.9 Interfaces
 
 #### 3.9.1 User Interfaces
-The User interfaces that will be implented are:
+The User interfaces that will be implemented are:
 - Dashboard: Lists AI news and tools with filters.
 - Roadmap Page: Displays curated learning roadmaps.
 - Newsletter: Subscription form and archive.
@@ -275,13 +283,13 @@ All open-source components used will comply with MIT, Apache, or similar permiss
 The GrowKnow logo and brand are reserved for this project. We disclaim responsibility for third-party content accuracy.
 
 ### 3.12 Applicable Standards
-The development will follow the common clean code standards and naming conventions. Also we will create a definition of d which will be added here as soon as its complete.
+The development will follow the common clean code standards and naming conventions. Also, we will create a definition of d which will be added here as soon as its complete.
 
 ## 4. Supporting Information
 For any further information you can contact the Common Playground Team or check our [GrowKnow Blog](https://knowgrow7.wordpress.com/). 
 The Team Members are:
-- Joaquin Berriel
-- Emin
+- Joaquin Berriel Martins
+- Emin Sengül
 - Roic
 
 <!-- Picture-Link definitions: -->
