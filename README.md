@@ -14,6 +14,20 @@ If you want to explore how we implement it pleas e visit our [GrowKnow Repositor
 | [GrowKnow - GitHub Repository](https://github.com/bermar24/GrowKnow)                                                                                                |
 
 
+| GrowKnow blog posts                                                                                                                                                                                        |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Homepage Blog](https://knowgrow7.wordpress.com/)                                                                                                                                                          |
+| [#1 Blog - Our Vision & Mission](https://knowgrow7.wordpress.com/2025/09/15/our-vision-mission/)                                                                                                           |
+| [#2 Blog - Team and Technology](https://knowgrow7.wordpress.com/2025/09/22/team-and-technology/)                                                                                                           |
+| [#3 Blog - Introducing Our Software Requirements Specification and Use Case Diagram](https://knowgrow7.wordpress.com/2025/10/01/introducing-our-software-requirements-specification-and-use-case-diagram/) |
+| [#4 Blog - Detailing Two Core Use Cases](https://knowgrow7.wordpress.com/2025/10/08/detailing-two-core-use-cases/)                                                                                         |
+| [#5 Blog -Bringing Our Use Cases to Life with BDD](https://knowgrow7.wordpress.com/2025/10/15/bringing-our-use-cases-to-life-with-bdd/)                                                                    |
+| [#6 Blog - Sprint & Task Management](https://knowgrow7.wordpress.com/2025/10/16/sprint-task-management/)                                                                                                   |
+| [#7 Blog - Architecture, Design Patterns, and the Decoupled Stack](https://knowgrow7.wordpress.com/2025/10/29/architecture-design-patterns-and-the-decoupled-stack/)                                       |
+| [#8 Blog - Visualizing Our System: Database & UML Diagrams](https://knowgrow7.wordpress.com/2025/11/05/visualizing-our-system-database-uml-diagrams/)                                                      |
+| [#9 Blog - Retrospective](https://knowgrow7.wordpress.com/2025/11/12/retrospective/)                                                                                                                       |
+
+
 
 ## 🌍 Vision & Mission  
 We are building a **central hub** that consolidates the latest developments in AI, organizes tools by real utility, and provides **structured learning paths for IT professionals**.  
