@@ -10,6 +10,7 @@ If you want to explore how we implement it pleas e visit our [GrowKnow Repositor
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [GrowKnow Documentation – Software Requirements Specification](https://github.com/bermar24/GrowKnow_Documentation/blob/main/Software_Requirements_Specification.md) |
 | [GrowKnow Documentation – Software Architecture Document](https://github.com/bermar24/GrowKnow_Documentation/blob/main/Software_Architecture_Document.md)           |
+| [GrowKnow Documentation – Artifact and Contributors Table](https://github.com/bermar24/GrowKnow_Documentation/blob/main/Artifact_Contributors_Table.md)           |
 | [GrowKnow Blog](https://knowgrow7.wordpress.com/)                                                                                                                   |
 | [GrowKnow - GitHub Repository](https://github.com/bermar24/GrowKnow)                                                                                                |
 
