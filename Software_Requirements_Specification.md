@@ -16,7 +16,7 @@
     - [Functionality](#31-functionality)
     - [Usability](#32-usability)
     - [Reliability](#33-reliability)
-    - [Performance](#34-performance)
+    - [Performance](#performance)
     - [Supportability](#35-supportability)
     - [Design Constraints](#36-design-constraints)
     - [Online User Documentation and Help System Requirements](#37-on-line-user-documentation-and-help-system-requirements)
@@ -30,40 +30,35 @@
 ## 1. Introduction
 
 ### 1.1 Purpose
-This Software Requirements Specification (SRS) describes all specifications for the application "GrowKnow". It includes an overview of the project and its vision, detailed information about the planned features, and the boundary conditions of the development process.
+This Software Requirements Specification (SRS) describes the current GrowKnow documentation scope, including the project vision, key use cases, technology stack, and the boundary conditions for development and deployment.
 
 
 ### 1.2 Scope
-The project is going to be realized as a web-based platform that consolidates current AI developments, organizes tools, and provides structured learning paths for IT professionals.
+GrowKnow is a modular web platform for **AI news**, **AI tool discovery**, and **structured learning paths** for IT professionals.
 
-Actors of this platform can be Visitors, Registered Users, Admins, or the Automation Orchestrator (n8n). 
+The current documented scope covers these high-level areas:
+
+* **AI News Feed & Newsletter:** automated collection of AI-related news, deduplication, summarization, tagging, and newsletter generation.
+* **AI Tool Directory:** curated AI tools organized by task, use case, and filtering metadata.
+* **Role-Based Learning Roadmaps:** structured learning paths for IT roles such as Data Engineer, ML Engineer, DevOps, Backend Engineer, and Security Engineer.
+* **Account & Feedback System:** user subscriptions, suggestions, and corrections *to review* if not yet implemented in the current release.
+* **Administration & Data Pipelines:** admin review, content management, and n8n-driven ingestion workflows.
+
+The documented actors are **Visitors**, **Registered Users**, **Admins**, and the **Automation Orchestrator (n8n)**.
   
-Planned Subsystems are: 
-
-* AI News Feed & Newsletter:
-At the core, an automated feed consolidates vetted AI sources. Articles are deduplicated, summarized, and tagged with metadata (source, date, relevance, use case). They are published on the platform and distributed through a weekly newsletter.
-
-* AI Tool Directory:
-A curated repository of AI tools, categorized by tasks (generate, analyze, automate, build, secure). Each tool includes metadata such as domains, alternatives, integration effort, and example workflows. Users can filter by goal, budget, and maturity.
-
-* Role-Based Learning Roadmaps:
-Roadmaps for roles like Data Engineer, ML Engineer, DevOps, or Security Engineer. Each roadmap includes ordered learning objectives, resources, and practice tasks.
-
-* Account & Feedback System:
-Registered users can subscribe to newsletters, suggest new tools/sources, and provide corrections.
-
-* Administration & Data Pipelines:
-Admins manage content review, user roles, and automation pipelines for ingestion, embeddings, and fact-checking. Automations (via n8n) handle crawling, newsletter generation, and triggers.
-
 ### 1.3 Definitions, Acronyms and Abbreviations
-| Abbrevation | Explanation                            |
-| ----------- | -------------------------------------- |
-| SRS         | Software Requirements Specification    |
-| UC          | Use Case                               |
-| n/a         | not applicable                         |
-| tbd         | to be determined                       |
-| UCD         | overall Use Case Diagram               |
-| FAQ         | Frequently asked Questions             |
+| Abbrevation | Explanation                         |
+|-------------|-------------------------------------|
+| SRS         | Software Requirements Specification |
+| UC          | Use Case                            |
+| n/a         | not applicable                      |
+| tbd         | to be determined                    |
+| UCD         | overall Use Case Diagram            |
+| FAQ         | Frequently asked Questions          |
+| DRF         | Django REST Framework               |
+| SPA         | Single-Page Application             |
+| n8n         | Workflow automation platform        |
+| RUP         | Rational Unified Process            |
 
 ### 1.4 References
 
@@ -71,13 +66,14 @@ Admins manage content review, user roles, and automation pipelines for ingestion
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [GrowKnow Documentation – Software Requirements Specification](https://github.com/bermar24/GrowKnow_Documentation/blob/main/Software_Requirements_Specification.md) |
 | [GrowKnow Documentation – Software Architecture Document](https://github.com/bermar24/GrowKnow_Documentation/blob/main/Software_Architecture_Document.md)           |
+| [GrowKnow Documentation – Artifact and Contributors Table](https://github.com/bermar24/GrowKnow_Documentation/blob/main/Artifact_Contributors_Table.md)             |
+| [GrowKnow Documentation – Test Plan](https://github.com/bermar24/GrowKnow_Documentation/blob/main/Test_Plan.md)                                                     |
 | [GrowKnow Blog](https://knowgrow7.wordpress.com/)                                                                                                                   |
-| [GrowKnow - GitHub Repository](https://github.com/bermar24/GrowKnow)                                                                                                |
-
+| [GrowKnow Repository](https://github.com/bermar24/GrowKnow)                                                                                                         |
 
 
 ### 1.5 Overview
-The following chapter provides an overview of this project with vision and Overall Use Case Diagram. The third chapter (Requirements Specification) delivers more details about the specific requirements in terms of functionality, usability and design parameters. Finally there is a chapter with supporting information. 
+The following chapter provides an overview of this project with the vision and overall use case diagram. The third chapter (Requirements Specification) delivers more detail about functionality, usability, and design parameters. Finally, there is a chapter with supporting information.
     
 ## 2. Overall Description
 
@@ -87,58 +83,62 @@ We aim to build a central hub for AI professionals. The platform consolidates AI
 * Support faster and more confident technology decisions.
 * Enable measurable progress in AI/IT learning paths.
 
-The system will be delivered iteratively:
-1. MVP (by December): News feed, newsletter, tool search & filtering, and initial roadmaps.
-2. Next phase: Expansion of the tool directory and roadmap coverage.
-3. Later: More advanced feedback loops, contributor system, and extended automation.
+The system is intended to evolve iteratively:
+1. **Current documented MVP:** AI news browsing, search and filtering and newsletter triggering through n8n.
+2. **Next phase:** expansion of the tool directory and roadmap coverage.
+3. **Later:** more advanced feedback loops, contributor workflows, and extended automation.
 
 ### 2.2 Use Case Diagram
 
 ![OUCD](Diagrams/GrowKnow_Overal_UML_color.png)
 
-- Yellow: Planned till December
+- Yellow: Planned MVP 
 
 ### 2.3 Technology Stack
-The technology we use is:
+The technology stack used in the current documentation is:
 
-Frontend:
-
+**Frontend**
 * React
+* Vite
+* TypeScript
+* React Router
 
-Backend:
-UseCaseDiagramCP.png
-* Node.js (API services)
-* Supabase (Postgres-based DB with authentication)
+**Backend**
+* Django
+* Django REST Framework
+* Python
 
-Automation:
+**Automation**
+* n8n
+* Ollama
+* Docker Compose
 
-* n8n (workflow automation for crawling, newsletter runs, fact-checking)
+**Data Storage**
 
-Search & Data Processing:
+* SQLite for local development
+* Supabase / PostgreSQL for hosted or production usage
 
-* OpenSearch / Elasticsearch
+**Search & Data Processing**
 
-Project Management:
+* OpenSearch / Elasticsearch when required
+
+**Project Management**
 
 * GitHub
 * Rational Unified Process (RUP) iteration planning - YouTrack
 
-Deployment & DevOps:
+**Testing**
 
-* CI/CD pipelines (planned)
-* Containerized environments (Docker/Kubernetes considered)
-
-Testing:
-
-* Jest / Cypress (frontend & API)
-* Manual + automated test cases for newsletter generation and search filters
+* Behave / behave-django
+* pytest / pytest-django
+* Manual and automated checks for the news and filtering workflows
 
 ## 3. Specific Requirements
 
 ### 3.1 Functionality
 This section explains the different use cases shown in the Use Case Diagram and their functionality.
 
-Until December (MVP) we plan to implement:
+Until the current documented MVP, we plan to implement:
 - 3.1.1 Browse AI News
 - 3.1.2 Admin Panel
 - 3.1.3 Manage Database & Pipelines
@@ -154,7 +154,7 @@ For later releases we plan to implement:
 - 3.1.10 Manage Users & Roles
 - 3.1.11 Explore Learning Roadmaps
 - 3.1.12 Review/Edit/Publish Articles
-- 3.1.13 Unsubscribe from Newslaetter
+- 3.1.13 Unsubscribe from Newsletter
 
 #### 3.1.1 Browse AI News
 Users can read and navigate through the latest AI news, which are automatically collected, summarized, and tagged.
@@ -205,7 +205,7 @@ Users can navigate role-based roadmaps (e.g., Data Engineer, ML Engineer) with s
 Admins review automatically ingested articles before publishing them.
 
 #### 3.1.13 Unsubscribe to Newsletter
-Registered users can unsubscribe from receive the weekly newsletter.
+Registered users can unsubscribe from the weekly newsletter.
 
 ### 3.2 Usability
 We aim to design the GrowKnow platform with a clean, intuitive, and responsive interface. The user experience should feel natural, requiring no special training.
@@ -223,7 +223,7 @@ The server shall be available 99% of the time. This also means we have to figure
 
 #### 3.3.2 Defect Rate
 Our goal is that we have no loss of any data.
-
+ 
 ### 3.4 Perfomance
 
 #### 3.4.1 Capacity
@@ -238,19 +238,19 @@ Pages and search queries should load within 1–2 seconds under normal load.
 ### 3.5 Supportability
 
 #### 3.5.1 Coding Standards
-We will follow industry best practices and clean code principles for both backend (Django) and frontend (React).
+We will follow industry best practices and clean code principles for both backend (Django) and frontend (React/Vite).
 
 #### 3.5.2 Testing Strategy
-The system will use automated testing for core functionalities (user registration, newsletter, search). Unit, integration, and pipeline tests will ensure reliability.
+The system will use automated testing for core functionalities such as news browsing, newsletter triggering, and search/filter behavior. Unit, integration, and pipeline tests should be used where applicable.
 
 ### 3.6 Design Constraints
 * Modular architecture (frontend, backend, automation orchestrator).
 * RESTful APIs for data exchange.
-* Tech stack: React, Django, Supabase, n8n for automation.
-* Hosted on scalable cloud infrastructure (e.g., Vercel, AWS).
+* Tech stack: React, Vite, Django, Django REST Framework, Supabase, n8n, and Ollama.
+* Hosted on scalable cloud infrastructure or equivalent deployment targets *to review*.
 
 ### 3.7 On-line User Documentation and Help System Requirements
-GrowKnow will provide a contact forms. Most features are designed to be self-explanatory.
+GrowKnow will provide contact forms or equivalent documentation routes. Most features are designed to be self-explanatory.
 
 ### 3.8 Purchased Components
 We don't have any purchased components yet. If there will be purchased components in the future we will list them here.
@@ -258,12 +258,12 @@ We don't have any purchased components yet. If there will be purchased component
 ### 3.9 Interfaces
 
 #### 3.9.1 User Interfaces
-The User interfaces that will be implemented are:
-- Dashboard: Lists AI news and tools with filters.
-- Roadmap Page: Displays curated learning roadmaps.
-- Newsletter: Subscription form and archive.
-- Admin Panel: Content, users, and pipeline management.
-- Profile Page: User account management.
+The user interfaces that will be implemented are:
+- Dashboard: lists AI news and tools with filters.
+- Roadmap Page: displays curated learning roadmaps.
+- Newsletter: subscription form and archive.
+- Admin Panel: content, users, and pipeline management.
+- Profile Page: user account management.
 
 #### 3.9.2 Hardware Interfaces
 (n/a)
@@ -272,25 +272,26 @@ The User interfaces that will be implemented are:
 - Browser-based frontend.
 - RESTful APIs for backend.
 - Automation workflows via n8n.
+- Optional Supabase client access when configured.
 
 #### 3.9.4 Communication Interfaces
-HTTP/HTTPS protocols for all interactions. 
+HTTP/HTTPS protocols for all interactions.
 
 ### 3.10 Licensing Requirements
 All open-source components used will comply with MIT, Apache, or similar permissive licenses.
 
 ### 3.11 Legal, Copyright, and Other Notices
-The GrowKnow logo and brand are reserved for this project. We disclaim responsibility for third-party content accuracy.
+The GrowKnow logo and brand are reserved for this project. Third-party content remains subject to the original source terms.
 
 ### 3.12 Applicable Standards
-The development will follow the common clean code standards and naming conventions. Also, we will create a definition of d which will be added here as soon as its complete.
+The development will follow common clean code standards, naming conventions, and the documented API contracts. Additional project-specific standards are *to review*.
 
 ## 4. Supporting Information
-For any further information you can contact the Common Playground Team or check our [GrowKnow Blog](https://knowgrow7.wordpress.com/). 
+For any further information you can contact the project team or check our [GrowKnow Blog](https://knowgrow7.wordpress.com/).  
 The Team Members are:
 - Joaquin Berriel Martins
-- Emin Sengül
-- Roic
+- Emin Sengül *(left the project at the beginning of December 2025)*
+- Roic *(left the project at the beginning of December 2025)*
 
 <!-- Picture-Link definitions: -->
 [OUCD]: https://github.com/bermar24/GrowKnow/Diagrams/GrowKnow_Overal_UML_color.png "Overall Use Case Diagram"
